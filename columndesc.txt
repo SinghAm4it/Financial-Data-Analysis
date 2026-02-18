@@ -1,0 +1,64 @@
+Dataset 1: portfolio_data
+Description of Columns:
+
+portfolio_id: Unique identifier for each investment portfolio.
+portfolio_name: Name of the portfolio (e.g., Retirement Fund, Growth Portfolio).
+customer_id: Unique identifier for the customer who owns the portfolio.
+total_value: Total value of the portfolio (in USD).
+creation_date: Date the portfolio was created.
+risk_level: The risk level associated with the portfolio (e.g., Low, Medium, High).
+
+Dataset 2: investment_data
+Description of Columns:
+
+investment_id: Unique identifier for each investment.
+portfolio_id: Unique identifier for the portfolio (linked to portfolio_data).
+asset_type: Type of the asset (e.g., Stock, Bond, Mutual Fund, Real Estate).
+asset_name: Name of the asset or security (e.g., Apple, Tesla, S&P 500 ETF).
+units: Number of units of the asset held in the portfolio.
+purchase_price: Price at which the asset was purchased (per unit in USD).
+current_price: Current market price of the asset (per unit in USD).
+purchase_date: Date when the asset was purchased.
+market_value: Current market value of the asset (units * current_price).
+
+Dataset 3: transaction_data
+Description of Columns:
+
+transaction_id: Unique identifier for each transaction.
+portfolio_id: Unique identifier for the portfolio (linked to portfolio_data).
+transaction_type: Type of transaction (e.g., Buy, Sell, Dividend).
+transaction_date: Date the transaction occurred.
+asset_type: Type of the asset (linked to investment_data).
+asset_name: Name of the asset (linked to investment_data).
+units: Number of units involved in the transaction.
+transaction_price: Price per unit of the asset at the time of the transaction.
+total_amount: Total amount involved in the transaction (units * transaction_price).
+
+Dataset 4: performance_data
+Description of Columns:
+
+portfolio_id: Unique identifier for the portfolio (linked to portfolio_data).
+date: Date of the performance snapshot.
+portfolio_value: Total value of the portfolio on the given date (in USD).
+return_percentage: Portfolio return percentage on the given date.
+benchmark_return: Return percentage of the relevant market benchmark (e.g., S&P 500) on the same date.
+net_inflows: Net inflows into the portfolio (total deposits - withdrawals) on the given date (in USD).
+net_outflows: Net outflows from the portfolio (withdrawals - deposits) on the given date (in USD).
+
+Dataset 5: customer_data
+Description of Columns:
+
+customer_id: Unique identifier for each customer.
+customer_name: Name of the customer.
+age: Age of the customer.
+gender: Gender of the customer (Male, Female, Other).
+income: Annual income of the customer (in thousands of USD).
+location: City or region where the customer resides.
+signup_date: Date the customer signed up for the portfolio management service.
+
+Explanation of the Datasets:
+Portfolio Data: Contains 200 investment portfolios with their total value, creation date, and risk level.
+Investment Data: Tracks 1,000 individual investments within the portfolios, including asset types, units held, and their current market value.
+Transaction Data: Contains 3,000 transactions (buy, sell, or dividends) for assets within the portfolios.
+Performance Data: Tracks portfolio performance over time, including returns, portfolio value, net inflows/outflows, and comparison to benchmark returns.
+Customer Data: Includes demographic data for 500 customers who own investment portfolios.
